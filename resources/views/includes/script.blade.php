@@ -94,6 +94,37 @@
                     L.marker(coords).addTo(map)
                         .bindPopup(name)
                         .openPopup();
+                } else if (mode == "edit-bengkel") {
+                    const marker = L.marker(coords, {
+                            draggable: true
+                        }).addTo(map)
+                        .bindPopup(name)
+                        .openPopup();
+
+                    marker.on('dragend', function(e) {
+                        const position = marker.getLatLng();
+                        document.getElementById('latitude').value = position.lat.toFixed(6);
+                        document.getElementById('longitude').value = position.lng.toFixed(6);
+                    });
+
+                    document.getElementById('latitude').value = coords[0].toFixed(6);
+                    document.getElementById('longitude').value = coords[1].toFixed(6);
+
+                    if (L.Control.geocoder) {
+                        L.Control.geocoder({
+                                defaultMarkGeocode: false
+                            })
+                            .on('markgeocode', function(e) {
+                                const center = e.geocode.center;
+                                map.setView(center, 16);
+                                marker.setLatLng(center);
+                                document.getElementById('latitude').value = center.lat.toFixed(6);
+                                document.getElementById('longitude').value = center.lng.toFixed(6);
+                            })
+                            .addTo(map);
+                    } else {
+                        console.warn('Leaflet Control Geocoder is not loaded.');
+                    }
                 }
 
             } catch (err) {

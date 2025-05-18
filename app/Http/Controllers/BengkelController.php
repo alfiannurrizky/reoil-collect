@@ -51,6 +51,8 @@ class BengkelController extends Controller
             'address' => 'required|string',
             'phone' => 'nullable|string|max:20',
             'description' => 'nullable|string',
+            'latitude' => 'nullable|numeric',
+            'longitude' => 'nullable|numeric',
         ]);
 
         $bengkel->update($validated);
