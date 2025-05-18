@@ -344,7 +344,7 @@
                 <div class="col-lg-6 d-flex flex-column justify-content-center">
                     <div class="card border-0 shadow-sm h-100">
                         <div class="card-body p-4">
-                            <h4 class="fw-bold text-purple-800 mb-4">PT EcoOil Indonesia</h4>
+                            <h4 class="fw-bold text-purple-800 mb-4">PT Reoil Collect</h4>
                             <address class="mb-4">
                                 <p class="mb-2"><i class="fas fa-map-marker-alt text-purple-600 me-2"></i> Merdeka
                                     Square, Jakarta, Jalan Lapangan Monas
