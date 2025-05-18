@@ -17,7 +17,7 @@
                 <div class="sidebar-header position-relative">
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="logo">
-                            <a href="/home"><img
+                            <a href="#"><img
                                     src="{{ asset('Template/assets/static/images/logo/logo-reoil-2.png') }}"
                                     alt="Logo" srcset="" style="width: 130px; height: auto;"></a>
                         </div>
