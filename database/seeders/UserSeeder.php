@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
         User::create([
             'name' => 'Admin',
             'email' => 'admin@reoilcollect.com',
-            'password' => Hash::make('password123'),
+            'password' => Hash::make('NeverTouch!!'),
         ]);
     }
 }
