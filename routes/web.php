@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\BengkelController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KontakController;
@@ -35,4 +36,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/bengkels/{id}', [BengkelController::class, 'show'])->name('bengkels.show');
     Route::get('/admin/kontak', [KontakController::class, 'index'])->name('kontak.index');
     Route::delete('/kontak/{id}', [KontakController::class, 'destroy'])->name('kontak.destroy');
+
+    Route::get('/settings/password/edit', [ChangePasswordController::class, 'edit'])->name('auth.passwords.edit');
+    Route::put('/settings/password/update', [ChangePasswordController::class, 'update'])->name('auth.passwords.update');
 });

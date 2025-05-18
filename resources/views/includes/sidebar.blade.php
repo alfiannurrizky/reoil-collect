@@ -30,6 +30,13 @@
             </a>
         </li>
 
+        <li class="sidebar-item">
+            <a href="{{ route('auth.passwords.edit') }}" class='sidebar-link'>
+                <i class="bi bi-key-fill"></i>
+                <span>Ganti Password</span>
+            </a>
+        </li>
+
         <li class="sidebar-item  ">
             <a href="#" class='sidebar-link'
                 onclick="event.preventDefault();document.getElementById('logout-form').submit();">
