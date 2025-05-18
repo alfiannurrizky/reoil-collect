@@ -7,6 +7,7 @@
     <title>Reoil Collect</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('Template/assets/static/images/logo/logo-reoil-2.png') }}">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .hero-gradient {
@@ -265,7 +266,7 @@
                             </div>
                             <div>
                                 <h4 class="font-semibold">Email</h4>
-                                <p class="opacity-90">info@ReoilCollect.id</p>
+                                <p class="opacity-90">info@reoilcollect.com</p>
                                 <a href="mailto:info@ReoilCollect.id"
                                     class="inline-block mt-2 bg-white text-purple-600 px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-100 transition">
                                     <i class="fas fa-paper-plane mr-2"></i> Kirim Email
@@ -278,7 +279,7 @@
                             </div>
                             <div>
                                 <h4 class="font-semibold">Alamat Kantor</h4>
-                                <p class="opacity-90">Jl. Lingkungan Hijau No. 45, Jakarta Selatan, Indonesia</p>
+                                <p class="opacity-90">Jl. Jakarta Raya Monas, Jakarta Pusat, Indonesia</p>
                             </div>
                         </div>
                     </div>
@@ -321,7 +322,63 @@
         </div>
     </section>
 
+    <section id="location" class="py-5 bg-white">
+        <div class="container py-5">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="display-5 fw-bold text-black-800 mb-3">Lokasi Kami</h2>
+                    <div class="divider bg-purple-600 mx-auto" style="height: 3px; width: 80px;"></div>
+                    <p class="text-muted mt-4">Kunjungi kantor dan pusat pengelolaan oli bekas kami di Jakarta</p>
+                </div>
+            </div>
 
+            <div class="row align-items-stretch">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="map-container" style="height: 450px;">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.82702404857471!3d-6.175285728009596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTAnMzEuMCJTIDEwNsKwNDknMzcuMyJF!5e0!3m2!1sen!2sid!4v1620000000000!5m2!1sen!2sid"
+                            width="100%" height="100%" style="border:0;" allowfullscreen=""
+                            loading="lazy"></iframe>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-4">
+                            <h4 class="fw-bold text-purple-800 mb-4">PT EcoOil Indonesia</h4>
+                            <address class="mb-4">
+                                <p class="mb-2"><i class="fas fa-map-marker-alt text-purple-600 me-2"></i> Jl.
+                                    Lingkar Luar Barat No. 123</p>
+                                <p class="mb-2 ps-3">DKI Jakarta 11730</p>
+                                <p class="mb-0"><i class="fas fa-phone-alt text-purple-600 me-2"></i> +62 21 1234
+                                    5678</p>
+                            </address>
+
+                            <h5 class="fw-bold mb-3 text-purple-800">Petunjuk Lokasi:</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check-circle text-purple-600 me-2"></i> Dekat
+                                    dengan Stasiun Palmerah</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-purple-600 me-2"></i> Area
+                                    berpagar hijau dengan plang besar EcoOil</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-purple-600 me-2"></i> Parkir
+                                    luas untuk kendaraan pengantar</li>
+                                <li class="mb-0"><i class="fas fa-check-circle text-purple-600 me-2"></i> Buka untuk
+                                    kunjungan dengan janji temu</li>
+                            </ul>
+
+                            <div class="mt-4">
+                                <a href="https://maps.app.goo.gl/4rKX1Wrb4exWieBq7" class="btn btn-primary me-2">
+                                    <i class="fas fa-directions me-2"></i> Petunjuk Arah
+                                </a>
+                                <a href="#contact" class="btn btn-outline-primary">
+                                    <i class="fas fa-calendar-check me-2"></i> Buat Janji
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white pt-16 pb-8">
@@ -481,6 +538,8 @@
             });
         </script>
     @endif
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
