@@ -23,7 +23,9 @@ Route::get('/', function () {
 
 Route::post('/kontak', [KontakController::class, 'store'])->name('kontak.store')->middleware(['throttle:global']);
 
-Auth::routes();
+Auth::routes([
+    'register' => false
+]);
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
