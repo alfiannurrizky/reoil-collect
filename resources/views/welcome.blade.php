@@ -346,8 +346,9 @@
                         <div class="card-body p-4">
                             <h4 class="fw-bold text-purple-800 mb-4">PT EcoOil Indonesia</h4>
                             <address class="mb-4">
-                                <p class="mb-2"><i class="fas fa-map-marker-alt text-purple-600 me-2"></i> Jl.
-                                    Lingkar Luar Barat No. 123</p>
+                                <p class="mb-2"><i class="fas fa-map-marker-alt text-purple-600 me-2"></i> Merdeka
+                                    Square, Jakarta, Jalan Lapangan Monas
+                                </p>
                                 <p class="mb-2 ps-3">DKI Jakarta 11730</p>
                                 <p class="mb-0"><i class="fas fa-phone-alt text-purple-600 me-2"></i> +62 21 1234
                                     5678</p>
@@ -356,9 +357,7 @@
                             <h5 class="fw-bold mb-3 text-purple-800">Petunjuk Lokasi:</h5>
                             <ul class="list-unstyled">
                                 <li class="mb-2"><i class="fas fa-check-circle text-purple-600 me-2"></i> Dekat
-                                    dengan Stasiun Palmerah</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-purple-600 me-2"></i> Area
-                                    berpagar hijau dengan plang besar EcoOil</li>
+                                    dengan Monas</li>
                                 <li class="mb-2"><i class="fas fa-check-circle text-purple-600 me-2"></i> Parkir
                                     luas untuk kendaraan pengantar</li>
                                 <li class="mb-0"><i class="fas fa-check-circle text-purple-600 me-2"></i> Buka untuk
@@ -386,7 +385,7 @@
             <div class="grid md:grid-cols-4 gap-8 mb-12">
                 <div>
                     <div class="flex items-center mb-4">
-                        <i class="fas fa-recycle text-3xl text-emerald-500 mr-2"></i>
+                        <i class="fas fa-recycle text-3xl text-purple-500 mr-2"></i>
                         <span class="font-bold text-xl">ReoilCollect</span>
                     </div>
                     <p class="text-gray-400">
@@ -439,7 +438,7 @@
                         <input type="email" placeholder="Email Anda"
                             class="px-4 py-2 w-full rounded-l-lg focus:outline-none text-gray-800">
                         <button type="submit"
-                            class="bg-emerald-600 px-4 py-2 rounded-r-lg hover:bg-emerald-700 transition">
+                            class="bg-purple-600 px-4 py-2 rounded-r-lg hover:bg-emerald-700 transition">
                             <i class="fas fa-paper-plane"></i>
                         </button>
                     </form>
