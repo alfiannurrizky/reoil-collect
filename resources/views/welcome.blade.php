@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reoil Collect</title>
+    <title>{{ \App\Models\Setting::getValue('company_name', 'nama perusahaan belum diatur') }}</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('Template/assets/static/images/logo/logo-reoil-2.png') }}">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -51,7 +51,8 @@
                 <div class="flex items-center space-x-4">
                     <div class="flex items-center">
                         <i class="fas fa-recycle text-3xl text-purple-600 mr-2"></i>
-                        <span class="font-bold text-xl text-purple-800">REOIL.COLLECT</span>
+                        <span
+                            class="font-bold text-xl text-purple-800">{{ \App\Models\Setting::getValue('company_name', 'nama perusahaan belum diatur') }}</span>
                     </div>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
@@ -93,8 +94,7 @@
 
                     </h1>
                     <p class="text-xl mb-8 opacity-90">
-                        Kami mengumpulkan dan mendaur ulang oli bekas dengan cara yang bertanggung jawab terhadap
-                        lingkungan. Bergabunglah dengan kami dalam menjaga bumi yang lebih bersih.
+                        {{ \App\Models\Setting::getValue('site_description', 'deskripsi perusahaan belum diatur') }}
                     </p>
                     <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                         <a href="#contact"
@@ -179,7 +179,8 @@
                 <div class="md:w-1/2">
                     <h2 class="text-3xl font-bold text-gray-900 mb-6">Tentang Kami</h2>
                     <p class="text-gray-600 mb-6">
-                        REOIL.COLLECT adalah perusahaan yang bergerak di bidang pengumpulan dan
+                        {{ \App\Models\Setting::getValue('company_name', 'nama perusahaan belum diatur') }} adalah
+                        perusahaan yang bergerak di bidang pengumpulan dan
                         pengelolaan limbah oli bekas dari berbagai bengkel kendaraan dan pelaku
                         usaha otomotif.
                     </p>
@@ -253,8 +254,9 @@
                             </div>
                             <div>
                                 <h4 class="font-semibold">WhatsApp</h4>
-                                <p class="opacity-90">+62 812 3456 7890</p>
-                                <a href="https://wa.me/6281234567890"
+                                <p class="opacity-90">
+                                    {{ \App\Models\Setting::getValue('company_phone', 'no telp belum diatur') }}</p>
+                                <a href="https://wa.me/{{ \App\Models\Setting::getValue('company_phone', 'no telp belum diatur') }}"
                                     class="inline-block mt-2 bg-white text-purple-600 px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-100 transition">
                                     <i class="fab fa-whatsapp mr-2"></i> Chat Sekarang
                                 </a>
@@ -266,8 +268,10 @@
                             </div>
                             <div>
                                 <h4 class="font-semibold">Email</h4>
-                                <p class="opacity-90">info@reoilcollect.com</p>
-                                <a href="mailto:info@ReoilCollect.id"
+                                <p class="opacity-90">
+                                    {{ \App\Models\Setting::getValue('company_email', 'email perusahaan belum diatur') }}
+                                </p>
+                                <a href="mailto:{{ \App\Models\Setting::getValue('company_email', 'email perusahaan belum diatur') }}"
                                     class="inline-block mt-2 bg-white text-purple-600 px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-100 transition">
                                     <i class="fas fa-paper-plane mr-2"></i> Kirim Email
                                 </a>
@@ -336,38 +340,43 @@
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <div class="map-container" style="height: 450px;">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.82702404857471!3d-6.175285728009596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTAnMzEuMCJTIDEwNsKwNDknMzcuMyJF!5e0!3m2!1sen!2sid!4v1620000000000!5m2!1sen!2sid"
-                            width="100%" height="100%" style="border:0;" allowfullscreen=""
-                            loading="lazy"></iframe>
+                            src="https://maps.google.com/maps?q={{ \App\Models\Setting::getValue('company_latitude') }},{{ \App\Models\Setting::getValue('company_longitude') }}&hl=id&z=15&output=embed"
+                            width="100%" height="450" style="border:0" allowfullscreen loading="lazy">
+                        </iframe>
                     </div>
                 </div>
                 <div class="col-lg-6 d-flex flex-column justify-content-center">
                     <div class="card border-0 shadow-sm h-100">
                         <div class="card-body p-4">
-                            <h4 class="fw-bold text-purple-800 mb-4">PT Reoil Collect</h4>
+                            <h4 class="fw-bold text-purple-800 mb-4">PT
+                                {{ \App\Models\Setting::getValue('company_name', 'nama perusahaan belum diatur') }}
+                            </h4>
                             <address class="mb-4">
-                                <p class="mb-2"><i class="fas fa-map-marker-alt text-purple-600 me-2"></i> Merdeka
-                                    Square, Jakarta, Jalan Lapangan Monas
+                                <p class="mb-2"><i class="fas fa-map-marker-alt text-purple-600 me-2"></i>
+                                    {{ \App\Models\Setting::getValue('company_address', 'alamat belum diatur') }}
                                 </p>
-                                <p class="mb-2 ps-3">DKI Jakarta 11730</p>
-                                <p class="mb-0"><i class="fas fa-phone-alt text-purple-600 me-2"></i> +62 21 1234
-                                    5678</p>
+                                {{-- <p class="mb-2 ps-3">DKI Jakarta 11730</p> --}}
+                                <p class="mb-0"><i
+                                        class="fas fa-phone-alt text-purple-600 me-2"></i>{{ \App\Models\Setting::getValue('company_phone', 'no telp belum diatur') }}
+                                </p>
                             </address>
 
                             <h5 class="fw-bold mb-3 text-purple-800">Petunjuk Lokasi:</h5>
                             <ul class="list-unstyled">
-                                <li class="mb-2"><i class="fas fa-check-circle text-purple-600 me-2"></i> Dekat
-                                    dengan Monas</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-purple-600 me-2"></i> Parkir
-                                    luas untuk kendaraan pengantar</li>
-                                <li class="mb-0"><i class="fas fa-check-circle text-purple-600 me-2"></i> Buka untuk
-                                    kunjungan dengan janji temu</li>
+                                @foreach (explode("\n", setting('location_guide')) as $item)
+                                    @if (trim($item) !== '')
+                                        <li class="mb-2">
+                                            <i class="fas fa-check-circle text-purple-600 me-2"></i>
+                                            {{ trim($item) }}
+                                        </li>
+                                    @endif
+                                @endforeach
                             </ul>
 
                             <div class="mt-4">
-                                <a href="https://maps.app.goo.gl/4rKX1Wrb4exWieBq7" class="btn btn-primary me-2">
+                                {{-- <a href="https://maps.app.goo.gl/4rKX1Wrb4exWieBq7" class="btn btn-primary me-2">
                                     <i class="fas fa-directions me-2"></i> Petunjuk Arah
-                                </a>
+                                </a> --}}
                                 <a href="#contact" class="btn btn-outline-primary">
                                     <i class="fas fa-calendar-check me-2"></i> Buat Janji
                                 </a>
@@ -386,7 +395,8 @@
                 <div>
                     <div class="flex items-center mb-4">
                         <i class="fas fa-recycle text-3xl text-purple-500 mr-2"></i>
-                        <span class="font-bold text-xl">ReoilCollect</span>
+                        <span
+                            class="font-bold text-xl">{{ \App\Models\Setting::getValue('company_name', 'nama perusahaan belum diatur') }}</span>
                     </div>
                     <p class="text-gray-400">
                         Solusi profesional untuk pengumpulan dan daur ulang oli bekas dengan standar lingkungan

@@ -16,12 +16,12 @@
             </a>
         </li>
 
-        {{-- <li class="sidebar-item">
-            <a href="" class='sidebar-link'>
-                <i class="bi bi-collection-fill"></i>
-                <span>List Laporan</span>
+        <li class="sidebar-item">
+            <a href="{{ route('settings.edit') }}" class='sidebar-link'>
+                <i class="bi bi-gear"></i>
+                <span>Pengaturan</span>
             </a>
-        </li> --}}
+        </li>
 
         <li class="sidebar-item  ">
             <a href="#" class='sidebar-link'
