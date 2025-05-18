@@ -18,6 +18,16 @@
         overflow: hidden;
         text-overflow: ellipsis;
     }
+
+    .leaflet-control-geocoder input {
+        color: #000;
+        background-color: #fff;
+    }
+
+    .dark-mode .leaflet-control-geocoder input {
+        color: #fff;
+        background-color: #333;
+    }
 </style>
 <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 <!-- Geocoder CSS -->
