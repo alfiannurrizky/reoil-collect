@@ -191,9 +191,8 @@
                     </p>
                     <div class="bg-purple-50 border-l-4 border-purple-500 p-4 mb-6">
                         <p class="text-purple-800 font-medium">
-                            <i class="fas fa-quote-left mr-2"></i> Visi kami adalah Menjadi penggerak utama dalam
-                            pengurangan limbah oli bekas demi lingkungan
-                            yang lebih bersih dan berkelanjutandengan konsep 3R (Reuse, Reduce dan Recycle).
+                            <i class="fas fa-quote-left mr-2"></i>
+                            {{ \App\Models\Setting::getValue('visi', 'visi belum diatur') }}
                         </p>
                     </div>
                     <div class="flex items-center">

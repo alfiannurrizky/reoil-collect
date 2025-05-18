@@ -60,6 +60,11 @@
                                 </div>
 
                                 <div class="mb-3">
+                                    <label for="visi" class="form-label">Visi Perusahaan</label>
+                                    <textarea name="visi" id="visi" class="form-control" rows="4">{{ $settings['visi'] ?? '' }}</textarea>
+                                </div>
+
+                                <div class="mb-3">
                                     <label for="site_description" class="form-label">Deskripsi Perusahaan</label>
                                     <textarea name="site_description" id="site_description" class="form-control" rows="4">{{ $settings['site_description'] ?? '' }}</textarea>
                                 </div>

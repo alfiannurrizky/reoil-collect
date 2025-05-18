@@ -15,7 +15,7 @@ class SettingController extends Controller
 
     public function update(Request $request)
     {
-        $data = $request->only(['company_name', 'company_address', 'company_email', 'company_phone', 'company_latitude', 'company_longitude', 'site_description', 'location_guide']);
+        $data = $request->only(['company_name', 'company_address', 'company_email', 'company_phone', 'company_latitude', 'company_longitude', 'visi', 'site_description', 'location_guide']);
 
         foreach ($data as $key => $value) {
             Setting::setValue($key, $value);
