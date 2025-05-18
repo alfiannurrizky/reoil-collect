@@ -3,6 +3,13 @@
         <li class="sidebar-title">Menu</li>
 
         <li class="sidebar-item">
+            <a href="{{ route('home') }}" class='sidebar-link'>
+                <i class="bi bi-layout-sidebar-inset"></i>
+                <span>Dashboard</span>
+            </a>
+        </li>
+
+        <li class="sidebar-item">
             <a href="{{ route('bengkels.index') }}" class='sidebar-link'>
                 <i class="bi bi-grid-fill"></i>
                 <span>Data Bengkel</span>
