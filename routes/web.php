@@ -29,6 +29,8 @@ Auth::routes([
     'register' => false
 ]);
 
+Route::get('/login-bengkel', [LoginController::class, 'showBengkelLoginForm'])->name('login.bengkel');
+
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::resource('bengkels', BengkelController::class);
@@ -40,10 +42,12 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/settings/password/edit', [ChangePasswordController::class, 'edit'])->name('auth.passwords.edit');
     Route::put('/settings/password/update', [ChangePasswordController::class, 'update'])->name('auth.passwords.update');
+
+    Route::resource('pickup-requests', \App\Http\Controllers\PickupRequestController::class);
 });
 
 
 
-Route::get('/login-bengkel', [LoginController::class, 'showBengkelLoginForm'])->name('login.bengkel');
-Route::post('/login-bengkel', [LoginController::class, 'bengkelLogin']);
+
+// Route::post('/login-bengkel', [LoginController::class, 'bengkelLogin']);
 
