@@ -18,6 +18,13 @@
             </li>
 
             <li class="sidebar-item">
+                <a href="{{ route('admin.pickup_requests.index') }}" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Pengajuan Customer</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item">
                 <a href="{{ route('kontak.index') }}" class='sidebar-link'>
                     <i class="bi bi-collection-fill"></i>
                     <span>Notifikasi Pesan</span>

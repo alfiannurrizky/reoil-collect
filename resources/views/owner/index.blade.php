@@ -49,7 +49,8 @@
                                         @forelse ($requests as $index => $request)
                                             <tr>
                                                 <td>{{ $index + 1 }}</td>
-                                                <td>{{ \Carbon\Carbon::parse($request->pickup_date)->format('d M Y') }}</td>
+                                                <td>{{ \Carbon\Carbon::parse($request->requested_date)->format('d M Y') }}
+                                                </td>
                                                 <td>
                                                     @if ($request->status === 'pending')
                                                         <span class="badge bg-warning text-dark">Menunggu</span>
