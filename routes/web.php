@@ -5,6 +5,7 @@ use App\Http\Controllers\BengkelController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KontakController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,3 +41,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/settings/password/edit', [ChangePasswordController::class, 'edit'])->name('auth.passwords.edit');
     Route::put('/settings/password/update', [ChangePasswordController::class, 'update'])->name('auth.passwords.update');
 });
+
+
+
+Route::get('/login-bengkel', [LoginController::class, 'showBengkelLoginForm'])->name('login.bengkel');
+Route::post('/login-bengkel', [LoginController::class, 'bengkelLogin']);
+

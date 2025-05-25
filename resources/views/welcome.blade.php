@@ -59,10 +59,25 @@
                     <a href="#home" class="text-purple-600 font-medium hover:text-purple-800 transition">Beranda</a>
                     <a href="#about" class="text-gray-600 hover:text-purple-600 transition">Tentang Kami</a>
                     <a href="#contact" class="text-gray-600 hover:text-purple-600 transition">Kontak</a>
-                    <a href="{{ route('login') }}"
-                        class="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700 transition">
-                        <i class="fas fa-lock mr-2"></i>Login Admin
-                    </a>
+                    <!-- Dropdown Login -->
+                    <div class="relative">
+                        <button id="loginDropdownButton"
+                            class="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700 transition flex items-center">
+                            <i class="fas fa-lock mr-2"></i>Login
+                            <svg class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div id="loginDropdownMenu"
+                            class="hidden absolute right-0 mt-2 w-40 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+                            <a href="{{ route('login') }}"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Login Admin</a>
+                            <a href="{{ route('login.bengkel') }}"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Login Bengkel</a>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="md:hidden flex items-center">
@@ -548,6 +563,22 @@
     @endif
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const button = document.getElementById('loginDropdownButton');
+            const menu = document.getElementById('loginDropdownMenu');
+
+            button.addEventListener('click', function(e) {
+                e.stopPropagation(); // Mencegah dropdown langsung hilang
+                menu.classList.toggle('hidden');
+            });
+
+            // Tutup dropdown jika klik di luar
+            document.addEventListener('click', function() {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
 </body>
 
 </html>

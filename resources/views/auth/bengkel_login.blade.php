@@ -21,7 +21,7 @@
     <div class="max-w-md w-full bg-white bg-opacity-20 backdrop-blur-md rounded-3xl shadow-lg p-10 text-gray-100">
 
         <div class="mb-8 text-center">
-            <h1 class="text-4xl font-extrabold mb-2 tracking-tight">Welcome Back Admin</h1>
+            <h1 class="text-4xl font-extrabold mb-2 tracking-tight">Welcome Back Owner</h1>
             <p class="text-purple-200">Silakan login untuk melanjutkan</p>
         </div>
 
