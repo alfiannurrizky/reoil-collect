@@ -12,7 +12,7 @@
                                 <p>Ini adalah panel admin untuk mengelola pengaturan website dan data bengkel.</p>
                             @else
                                 <h3>Selamat datang, {{ auth()->user()->name }}!</h3>
-                                <p>Ini adalah panel owner bengkel untuk mengelola pengaturan website dan data bengkel.</p>
+                                <p>Ini adalah panel owner bengkel untuk mengajukan penjemputan oli.</p>
                             @endif
                         </div>
                     </div>
@@ -55,8 +55,10 @@
                 @endif
             </div>
 
-            {!! $chart->container() !!}
-            <script src="{{ $chart->cdn() }}"></script>
-            {!! $chart->script() !!}
+            @if (auth()->user()->role == 'admin')
+                {!! $chart->container() !!}
+                <script src="{{ $chart->cdn() }}"></script>
+                {!! $chart->script() !!}
+            @endif
     </section>
 @endsection
