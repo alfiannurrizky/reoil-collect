@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminPickupRequestController;
+use App\Http\Controllers\AkunController;
 use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\BengkelController;
 use App\Http\Controllers\HomeController;
@@ -47,6 +48,11 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('pickup-requests', \App\Http\Controllers\PickupRequestController::class);
     Route::get('/admin/pickup-requests', [AdminPickupRequestController::class, 'index'])->name('admin.pickup_requests.index');
     Route::post('/admin/pickup-requests/{id}/update-status', [AdminPickupRequestController::class, 'updateStatus'])->name('admin.pickup_requests.updateStatus');
+
+    Route::get('/admin/akuns', [AkunController::class, 'index'])->name('admin.akun.index');
+    Route::post('/admin/akuns', [AkunController::class, 'store'])->name('admin.akun.store');
+    Route::put('/admin/akuns/{id}', [AkunController::class, 'update'])->name('admin.akun.update');
+    Route::delete('/admin/akuns/{id}', [AkunController::class, 'destroy'])->name('admin.akun.destroy');
 });
 
 

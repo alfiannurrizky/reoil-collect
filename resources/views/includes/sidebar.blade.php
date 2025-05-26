@@ -32,6 +32,13 @@
             </li>
 
             <li class="sidebar-item">
+                <a href="{{ route('admin.akun.index') }}" class='sidebar-link'>
+                    <i class="bi bi-collection-fill"></i>
+                    <span>Akun</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item">
                 <a href="{{ route('settings.edit') }}" class='sidebar-link'>
                     <i class="bi bi-gear"></i>
                     <span>Pengaturan</span>
