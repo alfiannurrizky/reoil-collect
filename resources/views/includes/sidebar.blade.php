@@ -19,21 +19,34 @@
 
             <li class="sidebar-item">
                 <a href="{{ route('admin.pickup_requests.index') }}" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
-                    <span>Pengajuan Customer</span>
+                    <i class="bi bi-person-fill"></i> <span>Pengajuan Customer</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item">
+                <a href="{{ route('products.index') }}" class='sidebar-link'>
+                    <i class="bi bi-box-seam"></i>
+                    <span>Produk</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item">
+                <a href="{{ route('admin.pesanan.index') }}" class='sidebar-link'>
+                    <i class="bi bi-cart"></i>
+                    <span>Pesanan</span>
                 </a>
             </li>
 
             <li class="sidebar-item">
                 <a href="{{ route('kontak.index') }}" class='sidebar-link'>
-                    <i class="bi bi-collection-fill"></i>
+                    <i class="bi bi-bell"></i>
                     <span>Notifikasi Pesan</span>
                 </a>
             </li>
 
             <li class="sidebar-item">
                 <a href="{{ route('admin.akun.index') }}" class='sidebar-link'>
-                    <i class="bi bi-collection-fill"></i>
+                    <i class="bi bi-person"></i>
                     <span>Akun</span>
                 </a>
             </li>
@@ -67,6 +80,13 @@
                 <a href="{{ route('pickup-requests.index') }}" class='sidebar-link'>
                     <i class="bi bi-collection-fill"></i>
                     <span>Penjemputan</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item">
+                <a href="{{ route('bengkels.product.index') }}" class='sidebar-link'>
+                    <i class="bi bi-cart-fill"></i>
+                    <span>Belanja</span>
                 </a>
             </li>
 
