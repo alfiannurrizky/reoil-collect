@@ -8,6 +8,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KontakController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\MidtransWebhookController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -28,7 +29,7 @@ Route::get('/', function () {
 });
 
 Route::post('/kontak', [KontakController::class, 'store'])->name('kontak.store')->middleware(['throttle:global']);
-
+Route::post('/midtrans/webhook', [MidtransWebhookController::class, 'handle']);
 Auth::routes([
     'register' => false
 ]);
@@ -58,10 +59,13 @@ Route::middleware(['auth'])->group(function () {
 
     Route::resource('products', ProductController::class);
     Route::get('/bengkel/products', [ProductController::class, 'bengkelIndex'])->name('bengkels.product.index');
-    Route::post('/bengkel/order', [OrderController::class, 'store'])->name('bengkel.order.store');
 
     Route::get('/admin/orders', [OrderController::class, 'index'])->name('admin.pesanan.index');
     Route::post('/admin/orders/{id}/update-status', [OrderController::class, 'updateStatus'])->name('admin.orders.update');
+
+    Route::post('/bengkels/order', [OrderController::class, 'store'])->name('bengkels.order.store');
+    Route::get('/bengkels/order/{order}/pay', [OrderController::class, 'pay'])->name('bengkels.order.pay');
+
 
 
 });

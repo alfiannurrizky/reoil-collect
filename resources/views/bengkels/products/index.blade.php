@@ -25,49 +25,6 @@
         </div>
         <div class="card-body table-responsive">
 
-            <div class="modal fade text-left" id="modalTambahProduk" tabindex="-1" role="dialog"
-                aria-labelledby="modalTambahProdukLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
-                    <div class="modal-content">
-
-                        <form action="" method="POST">
-                            @csrf
-                            <div class="modal-body">
-                                <label for="name">Nama Produk: <span class="text-danger">*</span></label>
-                                <div class="form-group">
-                                    <input id="name" type="text" name="name" class="form-control"
-                                        placeholder="Contoh: Oli Olahan X" required>
-                                </div>
-
-                                <label for="price">Harga per Drum (Rp): <span class="text-danger">*</span></label>
-                                <div class="form-group">
-                                    <input id="price" type="number" name="price" class="form-control"
-                                        placeholder="Contoh: 1500000" min="0" required>
-                                </div>
-
-                                <label for="stock">Stok (Drum): <span class="text-danger">*</span></label>
-                                <div class="form-group">
-                                    <input id="stock" type="number" name="stock" class="form-control"
-                                        placeholder="Contoh: 10" min="0" required>
-                                </div>
-                            </div>
-
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
-                                    <i class="bx bx-x d-block d-sm-none"></i>
-                                    <span class="d-none d-sm-block">Tutup</span>
-                                </button>
-                                <button type="submit" class="btn btn-primary ms-1">
-                                    <i class="bx bx-check d-block d-sm-none"></i>
-                                    <span class="d-none d-sm-block">Simpan</span>
-                                </button>
-                            </div>
-                        </form>
-
-                    </div>
-                </div>
-            </div>
-
 
             <table class="table">
                 <thead>
@@ -91,7 +48,7 @@
                                 </button>
                             </td>
                         </tr>
-                        <div class="modal fade" id="modalPesan-{{ $product->id }}" tabindex="-1"
+                        {{-- <div class="modal fade" id="modalPesan-{{ $product->id }}" tabindex="-1"
                             aria-labelledby="modalPesanLabel-{{ $product->id }}" aria-hidden="true">
                             <div class="modal-dialog">
                                 <form action="{{ route('bengkel.order.store') }}" method="POST">
@@ -120,6 +77,38 @@
                                             <button type="button" class="btn btn-secondary"
                                                 data-bs-dismiss="modal">Batal</button>
                                             <button type="submit" class="btn btn-success">Kirim Pesanan</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div> --}}
+                        <!-- Modal Pemesanan -->
+                        <div class="modal fade" id="modalPesan-{{ $product->id }}" tabindex="-1"
+                            aria-labelledby="modalPesanLabel-{{ $product->id }}" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <form action="{{ route('bengkels.order.store') }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Pesan Produk - {{ $product->name }}</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Harga: Rp {{ number_format($product->price, 0, ',', '.') }}</p>
+                                            <p>Stok tersedia: {{ $product->stock }}</p>
+
+                                            <div class="mb-3">
+                                                <label for="quantity" class="form-label">Jumlah</label>
+                                                <input type="number" name="quantity" class="form-control" min="1"
+                                                    max="{{ $product->stock }}" required>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-success">Lanjutkan Pembayaran</button>
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Batal</button>
                                         </div>
                                     </div>
                                 </form>
